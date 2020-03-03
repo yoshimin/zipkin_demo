@@ -1,8 +1,12 @@
-server:
-  port: 8081
+¥server:
+  port: 8082
+grpc:
+  port: 6567
 spring:
+  main:
+    allow-bean-definition-overriding: true
   application:
-    name: service2
+    name: service3
   sleuth:
     grpc:
       enabled: false
@@ -13,4 +17,4 @@ spring:
     enabled: true
     base-url: http://localhost:9411
     service:
-      name: service2
+      name: service3

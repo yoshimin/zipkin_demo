@@ -10,7 +10,7 @@ class TestService(private val webClient: WebClient) {
     fun test(): Mono<String> {
         return webClient
                 .get()
-                .uri("http://localhost:8081/test")
+                .uri("http://localhost:8081/grpc/test")
                 .retrieve()
                 .bodyToMono()
     }
