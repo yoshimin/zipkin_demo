@@ -5,7 +5,11 @@ Zipkin x Spring WebFlux x gRPC
 
 ![image](snapshot.png)
 
-[Quickstart](https://zipkin.io/pages/quickstart)
+[Zipkin Quickstart](https://zipkin.io/pages/quickstart)
+```
+docker run -d -p 9411:9411 openzipkin/zipkin
+```
+
 [Spring Cloud Sleuth](https://cloud.spring.io/spring-cloud-static/spring-cloud-sleuth/2.1.0.RELEASE/single/spring-cloud-sleuth.html)
 
 Register `WebClient` as a bean and the tracing instrumentation gets applied.
