@@ -32,23 +32,6 @@ class TestController(private val interceptors: List<ClientInterceptor>) {
         val request = Hello.MessageRequest.newBuilder()
                 .setMessage("hello")
                 .build()
-//        val stub = HelloServiceGrpc.newFutureStub(channel)
-//        val response = stub.hello(request)
-//
-//        return Mono.create {
-//            Futures.addCallback(
-//                    response,
-//                    object : FutureCallback<Hello.MessageResponse> {
-//                        override fun onFailure(t: Throwable) {
-//                            it.error(t)
-//                        }
-//                        override fun onSuccess(result: Hello.MessageResponse?) {
-//                            it.success(result?.message)
-//                        }
-//                    },
-//                    Executors.newCachedThreadPool()
-//            )
-//        }
 
         var stub = ReactorHelloServiceGrpc.newReactorStub(channel)
         return stub.hello(request).map { it.message }
